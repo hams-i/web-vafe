@@ -271,6 +271,11 @@ header .header-container nav ul a.active::after {
   width: var(--full-width);
   height: 5px;
 }
+header .header-container nav ul a.other-page {
+  color: var(--main-color);
+  opacity: 1;
+  background: var(--colourful);
+}
 header .header-container .hamburger {
   display: none;
   z-index: 11;
@@ -376,6 +381,14 @@ main .first-screen .text-section .instagram-button {
   color: var(--main-color);
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
+main .first-screen .text-section .videos {
+  color: var(--text-color);
+  background: linear-gradient(45deg, #F29F05 0%, #f1dbba 100%);
+}
+main .first-screen .text-section .videos span {
+  color: var(--text-color);
+  padding-top: 2px;
+}
 main .first-screen .image-section {
   width: var(--half-width);
   display: flex;
@@ -402,7 +415,7 @@ main .details-screen .image-and-text {
   padding: 0 20px;
 }
 main .details-screen .image-and-text .text-section {
-  width: 400px;
+  width: 420px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -587,6 +600,10 @@ footer .coypright-container .brand {
   100% {
     transform: translateX(1000%) rotate(-45deg);
   }
+}
+@font-face {
+  font-family: Roboto;
+  src: url("/fonts/Roboto.ttf");
 }
 @font-face {
   font-family: Poppins300;

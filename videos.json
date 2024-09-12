@@ -1,0 +1,87 @@
+[
+    {
+        "path": "videos/1.mp4",
+        "category": "restaurant",
+        "thumbnail": "thumbnails/1.jpg"
+    },
+    {
+        "path": "videos/2.mp4",
+        "category": "fashion",
+        "thumbnail": "thumbnails/2.jpg"
+    },
+    {
+        "path": "videos/3.mp4",
+        "category": "comment",
+        "thumbnail": "thumbnails/3.jpg"
+    },
+    {
+        "path": "videos/4.mp4",
+        "category": "restaurant",
+        "thumbnail": "thumbnails/4.jpg"
+    },
+    {
+        "path": "videos/5.mp4",
+        "category": "restaurant",
+        "thumbnail": "thumbnails/5.jpg"
+    },
+    {
+        "path": "videos/6.mp4",
+        "category": "fashion",
+        "thumbnail": "thumbnails/6.jpg"
+    },
+    {
+        "path": "videos/7.mp4",
+        "category": "comment",
+        "thumbnail": "thumbnails/7.jpg"
+    },
+    {
+        "path": "videos/8.mp4",
+        "category": "restaurant",
+        "thumbnail": "thumbnails/8.jpg"
+    },
+    {
+        "path": "videos/9.mp4",
+        "category": "travel",
+        "thumbnail": "thumbnails/9.jpg"
+    },
+    {
+        "path": "videos/10.mp4",
+        "category": "fashion",
+        "thumbnail": "thumbnails/10.jpg"
+    },
+    {
+        "path": "videos/11.mp4",
+        "category": "fashion",
+        "thumbnail": "thumbnails/11.jpg"
+    },
+    {
+        "path": "videos/13.mp4",
+        "category": "fashion",
+        "thumbnail": "thumbnails/13.jpg"
+    },
+    {
+        "path": "videos/15.mp4",
+        "category": "restaurant",
+        "thumbnail": "thumbnails/15.jpg"
+    },
+    {
+        "path": "videos/16.mp4",
+        "category": "restaurant",
+        "thumbnail": "thumbnails/16.jpg"
+    },
+    {
+        "path": "videos/17.mp4",
+        "category": "comment",
+        "thumbnail": "thumbnails/17.jpg"
+    },
+    {
+        "path": "videos/18.mp4",
+        "category": "fashion",
+        "thumbnail": "thumbnails/18.jpg"
+    },
+    {
+        "path": "videos/19.mp4",
+        "category": "restaurant",
+        "thumbnail": "thumbnails/19.jpg"
+    }
+]
