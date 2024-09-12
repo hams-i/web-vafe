@@ -1,7 +1,14 @@
+# URL'lerdeki .html uzantısını gizlemek için
 RewriteEngine On
 
+# .html uzantısını gizle
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^.]*)$ $1.html [L]
 
+# 404 hata sayfasını ana sayfaya yönlendir
 ErrorDocument 404 /index.html
+
+# .html uzantısı olan sayfalara istek geldiğinde doğru sayfaya yönlendir
+RewriteCond %{THE_REQUEST} /(.+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
