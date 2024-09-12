@@ -336,8 +336,9 @@
                     </p>
                 </div>
                 <div class="video-container">
-                    <input type="radio" class="filterButton" id="All" name="categories" value="All" checked>
-                    <input type="radio" class="filterButton" id="restaurant" name="categories" value="restaurant">
+                    <input type="radio" class="filterButton" id="All" name="categories" value="All">
+                    <input type="radio" class="filterButton" id="restaurant" name="categories" value="restaurant"
+                        checked>
                     <input type="radio" class="filterButton" id="fashion" name="categories" value="fashion">
                     <input type="radio" class="filterButton" id="comment" name="categories" value="comment">
                     <input type="radio" class="filterButton" id="travel" name="categories" value="travel">
@@ -569,6 +570,15 @@
                 closeVideo();
             }
         });
+        window.onload = function () {
+            // 1 saniye sonra butona tıklama
+            setTimeout(function () {
+                var button = document.getElementById('restaurant');
+                if (button) {
+                    button.click();
+                }
+            }, 1000); // 1000 ms = 1 saniye
+        };
     </script>
     <script src="script/script.js"></script>
 </body>
