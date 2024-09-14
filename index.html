@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="for-hidden">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,13 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
-<body>
+<body class="for-hidden">
+    <div class="overlay">
+        <span class="close button">&times;</span>
+        <div class="overlay-content">
+            <img src="" alt="Büyük Resim">
+        </div>
+    </div>
     <div class="loader-container">
         <div class="loader">
             <div></div>
@@ -57,6 +63,9 @@
                     </a>
                     <a href="#detaylar" class="link">
                         Detaylar
+                    </a>
+                    <a href="#websiteleri" class="link">
+                        Örnek Siteler
                     </a>
                     <a href="#iletisim" class="link">
                         İletişim
@@ -104,6 +113,14 @@
             <div class="image-section">
                 <img src="images/idea.png" alt="Web Vafe Image">
             </div>
+            <div class="go-to-web-examples">
+                <a href="#websiteleri" class="link">
+                    <span class="material-symbols-outlined">
+                        keyboard_arrow_down
+                    </span>
+                    Örnek Siteler
+                </a>
+            </div>
         </section>
 
         <section id="detaylar">
@@ -144,6 +161,11 @@
                         <h2 class="step-title">🎉 Dijital Dünyaya Hoş Geldiniz! 🌐</h2>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="websites-screen" id="websiteleri">
+            <div class="websites-container">
             </div>
         </section>
 
@@ -204,8 +226,14 @@
                         <a href="#detaylar" class="link">
                             Detaylar
                         </a>
+                        <a href="#websiteleri" class="link">
+                            Örnek Siteler
+                        </a>
                         <a href="#iletisim" class="link">
                             İletişim
+                        </a>
+                        <a href="/video">
+                            Videolar
                         </a>
                     </ul>
                 </div>
@@ -221,7 +249,7 @@
         </div>
         <p class="coypright-container">&copy; <span class="current-year"></span> - <span class="brand">Web
                 Vafe<sup>•</sup></span> Tüm
-            Hakları Saklıdır</p>
+            Hakları Saklıdır | v1.1.14</p>
     </footer>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR91C1NRE5"></script>
     <script>
@@ -230,6 +258,49 @@
         gtag('js', new Date());
 
         gtag('config', 'G-LR91C1NRE5');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.websites-container');
+            const overlay = document.querySelector('.overlay');
+            const overlayImg = overlay.querySelector('img');
+            const closeBtn = document.querySelector('.close');
+
+            fetch('websites.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(website => {
+                        const div = document.createElement('div');
+                        div.className = 'website';
+                        const img = document.createElement('img');
+                        img.src = website.path;
+                        img.alt = 'Website Resmi';
+                        div.appendChild(img);
+                        container.appendChild(div);
+
+                        div.addEventListener('click', () => {
+                            overlayImg.src = website.fullPath;
+                            overlay.style.display = 'flex';
+                            document.querySelector('body').classList.remove('for-hidden');
+                            document.querySelector('html').classList.remove('for-hidden');
+                            document.querySelector('body').classList.add('no-scroll');// Arka planın scrollunu engelle
+                            document.querySelector('html').classList.add('no-scroll');// Arka planın scrollunu engelle
+                        });
+                    });
+                });
+
+            function closeOverlay() {
+                overlay.style.display = 'none';
+                document.querySelector('body').classList.add('for-hidden');// Arka planın scrollunu tekrar etkinleştir
+                document.querySelector('html').classList.add('for-hidden');// Arka planın scrollunu tekrar etkinleştir
+                document.querySelector('body').classList.remove('no-scroll');// Arka planın scrollunu tekrar etkinleştir
+                document.querySelector('html').classList.remove('no-scroll');// Arka planın scrollunu tekrar etkinleştir
+            }
+
+            closeBtn.addEventListener('click', closeOverlay);
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) closeOverlay();
+            });
+        });
     </script>
     <script src="script/script.js"></script>
 </body>

@@ -1,4 +1,3 @@
-/* CLICK EFFECT FOR BUTTONS */
 const handleButtonState = (event, className) => {
     const target = event.target.closest('.button');
     if (target) target.classList[event.type === 'mousedown' || event.type === 'touchstart' ? 'add' : 'remove'](className);
@@ -21,7 +20,6 @@ function checkScroll() {
     updateActiveLink();
 }
 
-// Function to check which section is in view and update active link
 function updateActiveLink() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('header nav ul a');
@@ -47,28 +45,24 @@ function updateActiveLink() {
 
 document.querySelectorAll('.link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent the default anchor click behavior
+        e.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1); // Get the target id from href
-        const targetSection = document.getElementById(targetId); // Find the target section
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
 
         if (targetSection) {
-            // Scroll to the section smoothly
             targetSection.scrollIntoView({ behavior: 'smooth' });
 
-            // Update the URL without the hash
-            history.pushState(null, null, ' '); // Or use history.replaceState(null, null, ' ') if you don't want to keep history
+            history.pushState(null, null, ' ');
 
         }
     });
 });
 
-// Check scroll position when the page is scrolled
 window.addEventListener('scroll', checkScroll);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Check scroll position when the page is loaded
     checkScroll();
     updateActiveLink();
     const currentYearElement = document.querySelector('.current-year');
@@ -79,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Tüm kaynakların yüklendiğinde loader'ı gizler
 window.addEventListener('load', () => {
     const loader = document.querySelector('.loader-container');
     loader.style.opacity = 0;
@@ -100,10 +93,9 @@ window.addEventListener('load', () => {
 });
 
 document.querySelector('.top-button').addEventListener('click', function () {
-    // Sayfanın en yukarısına kaydır
     window.scrollTo({
         top: 0,
-        behavior: 'smooth' // Yumuşak bir kaydırma animasyonu için
+        behavior: 'smooth'
     });
 });
 

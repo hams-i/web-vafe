@@ -70,12 +70,20 @@
         }
 
         #closeVideo {
-            position: absolute;
+            position: fixed;
             top: 20px;
-            right: 20px;
-            color: white;
+            right: 30px;
+            color: var(--text-color);
+            background: var(--error-color);
             font-size: 30px;
             cursor: pointer;
+            user-select: none;
+            z-index: 1001;
+            padding: 0 14px;
+
+            &:hover {
+                background: var(--second-colourful);
+            }
         }
     }
 
@@ -86,6 +94,10 @@
                     &::after {
                         border-radius: 0px !important;
                     }
+                }
+
+                &.other-page {
+                    border-radius: 0px !important;
                 }
             }
         }
@@ -178,6 +190,10 @@
                             transition: opacity 0.3s ease-in-out;
                             cursor: pointer;
                             position: relative;
+
+                            -webkit-tap-highlight-color: transparent;
+                            outline: none;
+                            text-decoration: none;
 
                             img {
                                 width: 100%;
@@ -291,7 +307,7 @@
         <video id="videoPlayer" controls>
             Your browser does not support the video tag.
         </video>
-        <span id="closeVideo">&times;</span>
+        <span id="closeVideo" class="button">&times;</span>
     </div>
     <div class="loader-container">
         <div class="loader">
@@ -299,7 +315,9 @@
             <div></div>
         </div>
     </div>
-
+    <a href="https://wa.me/+905384480613" target="_blank" rel="noopener noreferrer">
+        <img src="images/whatsapp.png" class="whatsapp-icon button" alt="Whatsapp Icon">
+    </a>
     <header>
         <div class="header-container">
             <div class="logo">
@@ -424,6 +442,9 @@
                         <a href="#iletisim" class="link">
                             İletişim
                         </a>
+                        <a href="/">
+                            Web Site
+                        </a>
                     </ul>
                 </div>
                 <div class="logo">
@@ -438,7 +459,7 @@
         </div>
         <p class="coypright-container">&copy; <span class="current-year"></span> - <span class="brand">Web
                 Vafe<sup>•</sup></span> Tüm
-            Hakları Saklıdır</p>
+                Hakları Saklıdır | v1.1.14</p>
     </footer>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR91C1NRE5"></script>
@@ -496,7 +517,6 @@
                 document.getElementById('loadMore').style.display = 'none';
             }
 
-            // Yeni eklenen öğeleri Macy'ye bildir
             if (macyInstance) {
                 macyInstance.recalculate(true);
                 setTimeout(() => {
@@ -504,7 +524,6 @@
                 }, 100);
             }
 
-            // Görüntüleri yükledikten sonra opacity'yi ayarla
             setTimeout(() => {
                 document.querySelectorAll('.grid-item:not(.loaded)').forEach(item => item.classList.add('loaded'));
             }, 100);
@@ -534,13 +553,11 @@
         });
         document.getElementById('loadMore').addEventListener('click', loadMorePhotos);
 
-        // Sayfa yüklendiğinde fotoğrafları yükle ve Macy'yi başlat
         window.addEventListener('load', () => {
             loadPhotos();
             initMacy();
         });
 
-        // Pencere yeniden boyutlandırıldığında düzeni güncelle
         window.addEventListener('resize', () => {
             if (macyInstance) {
                 macyInstance.recalculate(true);
