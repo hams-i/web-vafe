@@ -459,7 +459,7 @@
         </div>
         <p class="coypright-container">&copy; <span class="current-year"></span> - <span class="brand">Web
                 Vafe<sup>•</sup></span> Tüm
-                Hakları Saklıdır | v1.1.14</p>
+            Hakları Saklıdır | <span id="version"></span></p>
     </footer>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR91C1NRE5"></script>
@@ -585,6 +585,13 @@
         document.getElementById('videoOverlay').addEventListener('click', function (event) {
             if (event.target === this) {
                 closeVideo();
+            }
+        });
+        document.addEventListener('keydown', function (event) {
+            if (document.getElementById('videoOverlay').style.display == 'block') {
+                if (event.key === "Escape") {
+                    closeVideo();
+                }
             }
         });
     </script>

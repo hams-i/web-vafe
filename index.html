@@ -249,7 +249,7 @@
         </div>
         <p class="coypright-container">&copy; <span class="current-year"></span> - <span class="brand">Web
                 Vafe<sup>•</sup></span> Tüm
-            Hakları Saklıdır | v1.1.14</p>
+            Hakları Saklıdır | <span id="version"></span></p>
     </footer>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR91C1NRE5"></script>
     <script>
@@ -282,25 +282,35 @@
                             overlay.style.display = 'flex';
                             document.querySelector('body').classList.remove('for-hidden');
                             document.querySelector('html').classList.remove('for-hidden');
-                            document.querySelector('body').classList.add('no-scroll');// Arka planın scrollunu engelle
-                            document.querySelector('html').classList.add('no-scroll');// Arka planın scrollunu engelle
+                            document.querySelector('body').classList.add('no-scroll');
+                            document.querySelector('html').classList.add('no-scroll');
                         });
                     });
                 });
 
             function closeOverlay() {
                 overlay.style.display = 'none';
-                document.querySelector('body').classList.add('for-hidden');// Arka planın scrollunu tekrar etkinleştir
-                document.querySelector('html').classList.add('for-hidden');// Arka planın scrollunu tekrar etkinleştir
-                document.querySelector('body').classList.remove('no-scroll');// Arka planın scrollunu tekrar etkinleştir
-                document.querySelector('html').classList.remove('no-scroll');// Arka planın scrollunu tekrar etkinleştir
+                document.querySelector('body').classList.add('for-hidden');
+                document.querySelector('html').classList.add('for-hidden');
+                document.querySelector('body').classList.remove('no-scroll');
+                document.querySelector('html').classList.remove('no-scroll');
             }
 
             closeBtn.addEventListener('click', closeOverlay);
             overlay.addEventListener('click', (e) => {
                 if (e.target === overlay) closeOverlay();
             });
+
+            document.addEventListener('keydown', function (event) {
+                if (overlay.style.display == 'flex') {
+                    if (event.key === "Escape") {
+                        closeOverlay();
+                    }
+                }
+            });
         });
+
+
     </script>
     <script src="script/script.js"></script>
 </body>
