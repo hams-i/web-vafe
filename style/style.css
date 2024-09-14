@@ -236,7 +236,7 @@ html .overlay .overlay-content {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  height: 90%;
+  max-height: 90%;
   max-width: 1200px;
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
