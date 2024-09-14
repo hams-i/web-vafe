@@ -228,6 +228,7 @@ html .overlay {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  cursor: zoom-out;
 }
 body .overlay .overlay-content,
 html .overlay .overlay-content {
