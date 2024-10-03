@@ -17,6 +17,10 @@
   list-style-type: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 ::-moz-selection {
   color: var(--main-color);
   background: var(--text-color);
