@@ -9,7 +9,7 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
 let currentIndex = 0;
-const totalImages = 53; // Toplam fotoğraf sayısı
+const totalImages = 62; // Toplam fotoğraf sayısı
 
 // Fotoğrafları dinamik olarak oluştur
 for (let i = 1; i <= totalImages; i++) {
