@@ -1,4 +1,3 @@
-const numberScroll = document.getElementById('numberScroll');
 const gallery = document.getElementById('gallery');
 const modal = document.getElementById('myModal');
 const modalImg = document.getElementById('modalImg');
@@ -9,20 +8,28 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
 let currentIndex = 0;
-const totalImages = 65; // Toplam fotoğraf sayısı
+let totalImages = 0;
+let imageData = [];
 
-// Fotoğrafları dinamik olarak oluştur
-for (let i = 1; i <= totalImages; i++) {
-    const img = document.createElement('img');
-    img.src = `./images/small/${i}.webp`;
-    img.alt = `Fotoğraf ${i}`;
-    img.className = 'thumbnail';
-    img.onclick = function () {
-        openModal(i - 1);
-        document.body.classList.add('no-scroll');
-    }
-    gallery.appendChild(img);
-}
+fetch('./photos.json')
+    .then(response => response.json())
+    .then(data => {
+        imageData = data;
+        totalImages = data.length;
+        
+        data.forEach((item, index) => {
+            const img = document.createElement('img');
+            img.src = `./images/small/${item.path}`;
+            img.alt = `Fotoğraf ${index + 1}`;
+            img.className = 'thumbnail';
+            img.onclick = function () {
+                openModal(index);
+                document.body.classList.add('no-scroll');
+            }
+            gallery.appendChild(img);
+        });
+    })
+    .catch(error => console.error('Error:', error));
 
 function openModal(index) {
     currentIndex = index;
@@ -39,7 +46,7 @@ function updateImage() {
         modalImg.style.display = "block";
     }
 
-    modalImg.src = `./images/big/${currentIndex + 1}.webp`;
+    modalImg.src = `./images/big/${imageData[currentIndex].path}`;
 }
 
 function nextImage() {
@@ -52,7 +59,6 @@ function prevImage() {
     updateImage();
 }
 
-// Modal'ı kapat
 closeBtn.onclick = function () {
     modal.style.display = "none";
     document.body.classList.remove('no-scroll');
@@ -67,18 +73,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let percentage = 0;
 
-    // Yükleme yüzdesini artır
     let interval = setInterval(function () {
         percentage += 1;
         percentageElement.textContent = "% " + percentage;
 
-        // Yükleme tamamlandığında
         if (percentage >= 100) {
             clearInterval(interval);
-            loading_screen.style.display = "none"; // Yükleyiciyi gizle
+            loading_screen.style.display = "none";
             document.body.classList.remove('no-scroll');
         }
-    }, 30); // Hızını belirlemek için 30 ms kullanıyoruz (isteğe göre ayarlanabilir)
+    }, 30);
 });
 
 document.querySelector('.home').addEventListener('click', function () {
@@ -88,7 +92,6 @@ document.querySelector('.home').addEventListener('click', function () {
     });
 });
 
-
 document.querySelector('.contact-button').addEventListener('click', function () {
     window.scrollTo({
         top: document.body.scrollHeight || document.documentElement.scrollHeight,
@@ -96,8 +99,6 @@ document.querySelector('.contact-button').addEventListener('click', function () 
     });
 });
 
-
-// Klavye yön tuşları için
 window.addEventListener('keydown', function (event) {
     if (modal.style.display === "flex") {
         if (event.key === "ArrowRight") {
@@ -111,7 +112,6 @@ window.addEventListener('keydown', function (event) {
     }
 });
 
-// Modal dışına tıklandığında kapat
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -119,14 +119,13 @@ window.onclick = function (event) {
     }
 }
 
-const topButton = document.querySelector(".top-button"); // Butonun ID'si
+const topButton = document.querySelector(".top-button");
 window.onscroll = function () {
-    if (window.scrollY > 160) { // Sayfa 160px aşağıdaysa
-        topButton.style.display = "block"; // Butonu göster
+    if (window.scrollY > 160) {
+        topButton.style.display = "block";
     } else {
-        topButton.style.display = "none"; // Butonu gizle
+        topButton.style.display = "none";
     }
-
 };
 
 topButton.addEventListener('click', function () {
