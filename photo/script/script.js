@@ -68,7 +68,7 @@ prevBtn.onclick = prevImage;
 nextBtn.onclick = nextImage;
 
 document.addEventListener("DOMContentLoaded", function () {
-    /* let loading_screen = document.getElementById("loading-screen");
+    let loading_screen = document.getElementById("loading-screen");
     let percentageElement = document.getElementById("percentage");
 
     let percentage = 0;
@@ -82,8 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
             loading_screen.style.display = "none";
             document.body.classList.remove('no-scroll');
         }
-    }, 30); */
-    document.body.classList.remove('no-scroll');
+    }, 30);
 });
 
 document.querySelector('.home').addEventListener('click', function () {
@@ -142,15 +141,7 @@ window.onscroll = function () {
         topButton.style.display = "none";
     }
 };
-const scrollableElement = document.querySelector('.instagram-content');
 
-// Mouse scroll olayını dinle
-scrollableElement.addEventListener('wheel', function(e) {
-    if (e.shiftKey) {
-        e.preventDefault(); // Varsayılan kaydırmayı engelle
-        scrollableElement.scrollLeft += e.deltaY; // Yatay kaydırma
-    }
-});
 topButton.addEventListener('click', function () {
     window.scrollTo({
         top: 0,

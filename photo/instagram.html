@@ -32,9 +32,9 @@
 </head>
 
 <body class="no-scroll">
-    <!-- <div id="loading-screen">
+    <div id="loading-screen">
         <div id="percentage">% 0</div>
-    </div> -->
+    </div>
     <main>
         <div class="top-button btn button"><span>&uarr;</span></div>
         <div class="top-container">
@@ -156,7 +156,8 @@
                         </div>
                     </div>
                     <h4 class="likes">19.188 beğenme</h4>
-                    <h4 class="message">🌅 Muhteşem manzaramız eşliğinde, enfes yemeklerimizi tadarken huzuru ve doğanın büyüsünü her anınızda doğanın huzurunu ve tazeliğini hissedin. 🌿✨</h4>
+                    <h4 class="message">🌅 Muhteşem manzaramız eşliğinde, enfes yemeklerimizi tadarken huzuru ve doğanın
+                        büyüsünü her anınızda doğanın huzurunu ve tazeliğini hissedin. 🌿✨</h4>
                     <h4 class="hashtags"><span>#restoran</span> <span>#manzara</span> <span>#doğadankeyif</span>
                         <span>#lezzetvedoğa</span> <span>#manzaralırestoran</span>
                         <span>#doğamanzarası</span> <span>#manzaraeşliğinde</span>
@@ -179,8 +180,8 @@
                 </a>
             </span>
             <p class="coypright-container">&copy; <span class="current-year"></span> - <span class="brand">Web
-                Vafe<sup>•</sup></span> Tüm
-            Hakları Saklıdır | <span id="version"></span></p>
+                    Vafe<sup>•</sup></span> Tüm
+                Hakları Saklıdır | <span id="version"></span></p>
         </div>
     </main>
 
@@ -195,6 +196,16 @@
         let currentPage = "instagram";
     </script>
     <script src="./script/script.js"></script>
+    <script>
+        const scrollableElement = document.querySelector('.instagram-content');
+
+        scrollableElement.addEventListener('wheel', function (e) {
+            if (e.shiftKey) {
+                e.preventDefault();
+                scrollableElement.scrollLeft += e.deltaY;
+            }
+        });
+    </script>
 </body>
 
 </html>
