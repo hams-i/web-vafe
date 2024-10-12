@@ -11,12 +11,12 @@ let currentIndex = 0;
 let totalImages = 0;
 let imageData = [];
 
-fetch('./photos.json')
+fetch('./' + currentPage + '.json')
     .then(response => response.json())
     .then(data => {
         imageData = data;
         totalImages = data.length;
-        
+
         data.forEach((item, index) => {
             const img = document.createElement('img');
             img.src = `./images/small/${item.path}`;
@@ -68,7 +68,7 @@ prevBtn.onclick = prevImage;
 nextBtn.onclick = nextImage;
 
 document.addEventListener("DOMContentLoaded", function () {
-    let loading_screen = document.getElementById("loading-screen");
+    /* let loading_screen = document.getElementById("loading-screen");
     let percentageElement = document.getElementById("percentage");
 
     let percentage = 0;
@@ -82,7 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
             loading_screen.style.display = "none";
             document.body.classList.remove('no-scroll');
         }
-    }, 30);
+    }, 30); */
+    document.body.classList.remove('no-scroll');
 });
 
 document.querySelector('.home').addEventListener('click', function () {
@@ -111,6 +112,20 @@ window.addEventListener('keydown', function (event) {
         }
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const currentYearElement = document.querySelector('.current-year');
+    const year = new Date().getFullYear();
+
+    if (currentYearElement) {
+        currentYearElement.textContent = year;
+    }
+    const version = document.querySelector('#version');
+    fetch('/version.json')
+        .then(response => response.json())
+        .then(data => {
+            version.innerText = data.version;
+        })
+});
 
 window.onclick = function (event) {
     if (event.target == modal) {
@@ -127,7 +142,15 @@ window.onscroll = function () {
         topButton.style.display = "none";
     }
 };
+const scrollableElement = document.querySelector('.instagram-content');
 
+// Mouse scroll olayını dinle
+scrollableElement.addEventListener('wheel', function(e) {
+    if (e.shiftKey) {
+        e.preventDefault(); // Varsayılan kaydırmayı engelle
+        scrollableElement.scrollLeft += e.deltaY; // Yatay kaydırma
+    }
+});
 topButton.addEventListener('click', function () {
     window.scrollTo({
         top: 0,

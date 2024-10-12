@@ -44,9 +44,13 @@ html {
 body .button,
 body a,
 body .btn,
+body i,
+body svg,
 html .button,
 html a,
-html .btn {
+html .btn,
+html i,
+html svg {
   -webkit-tap-highlight-color: transparent;
   outline: none;
   text-decoration: none;
@@ -78,7 +82,6 @@ html .no-scroll {
   font-family: "Halyard Display";
   position: relative;
   top: 180px;
-  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -151,6 +154,7 @@ html .no-scroll {
   -moz-columns: 3;
        columns: 3;
   gap: 5px;
+  padding-bottom: 50px;
 }
 .gallery-container .gallery .thumbnail {
   width: 100%;
@@ -238,6 +242,10 @@ html .no-scroll {
   align-items: center;
 }
 
+.coypright-container {
+  font-size: 16px;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -307,5 +315,8 @@ html .no-scroll {
   }
   .contact-container {
     font-size: var(--text-size);
+  }
+  .coypright-container {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=style.css.map */

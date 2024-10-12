@@ -15,7 +15,7 @@
     <meta property="og:image" content="/images/webvafe-photography.png">
     <meta property="og:url" content="https://webvafe.com/photo">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="/images/webvafe-photography.png">
     <meta name="twitter:title" content="Web Vafe | Photo">
     <meta name="twitter:description"
         content="Web Vafe, restoran, kafe, yemek, dış çekim ve düğün fotoğrafçılığı hizmetleri sunarak unutulmaz anılar yaratmanızı sağlar.">
@@ -31,9 +31,9 @@
 </head>
 
 <body class="no-scroll">
-    <div id="loading-screen">
+    <!-- <div id="loading-screen">
         <div id="percentage">% 0</div>
-    </div>
+    </div> -->
     <main>
         <div class="top-button btn button"><span>&uarr;</span></div>
         <div class="top-container">
@@ -56,11 +56,9 @@
                     +90 538 448 06 13
                 </a>
             </span>
-            <span>
-                Instagram: <a href="https://www.instagram.com/webvafe/" target="_blank" rel="noopener noreferrer">
-                    @webvafe
-                </a>
-            </span>
+            <p class="coypright-container">&copy; <span class="current-year"></span> - <span class="brand">Web
+                    Vafe<sup>•</sup></span> Tüm
+                Hakları Saklıdır | <span id="version"></span></p>
         </div>
     </main>
 
@@ -72,6 +70,9 @@
         <div id="loader" class="loader"></div>
     </div>
 
+    <script>
+        let currentPage = "photos";
+    </script>
     <script src="./script/script.js"></script>
 </body>
 
