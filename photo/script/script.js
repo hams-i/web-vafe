@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
             loading_screen.style.display = "none";
             document.body.classList.remove('no-scroll');
         }
-    }, 30);
+    }, 10);
 });
 
 document.querySelector('.home').addEventListener('click', function () {

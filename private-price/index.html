@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Web Vafe | Price</title>
+</head>
+<style>
+    
+:root {
+    --gold: #FFD700;
+    --purple: #800080;
+    --dark: #121212;
+    --light-dark: #1E1E1E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--dark), var(--light-dark));
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    color: var(--gold);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.intro {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0 5rem 0;
+    text-align: center;
+}
+
+.packages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.package-card {
+    background: var(--light-dark);
+    border: 3px solid var(--purple);
+    border-radius: 15px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.popular {
+    border-color: var(--gold);
+    transform: scale(1.05);
+    position: relative;
+}
+
+.package-card h3 {
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-bottom: 1.3rem;
+    border-bottom: 1px solid var(--purple);
+}
+
+.price {
+    color: var(--purple);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    text-align: center;
+    padding: 1rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--purple);
+}
+
+.features {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.feature-item {
+    margin: 2rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+.feature-item::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+.feature-title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.feature-description {
+    color: #cccccc;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-benefits {
+    color: #32CD32;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+.feature-benefits ul{
+
+}
+
+.feature-benefits li {
+    margin: 0.3rem 0;
+}
+
+.sub-features {
+    margin: 0.5rem 0 0.5rem 1rem;
+    list-style: disc;
+    color: #cccccc;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #888;
+    text-align: left;
+    padding-top: 1rem;
+    border-top: 1px solid var(--purple);
+}
+
+@media (max-width: 1400px) {
+    .packages {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+    }
+    
+    .popular {
+        transform: none;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px var(--purple); }
+    50% { box-shadow: 0 0 25px var(--gold); }
+    100% { box-shadow: 0 0 10px var(--purple); }
+}
+
+.popular {
+    animation: glow 3s infinite;
+}
+</style>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Dijital Dünyada İşletmenizi Öne Çıkarın</h1>
+            <p>Modern çözümler, profesyonel yaklaşım ve yenilikçi teknolojilerle işletmenizin dijital dönüşümünü
+                gerçekleştiriyoruz. Hem web varlığınızı oluşturuyor hem de işletmenizin dijital altyapısını kuruyoruz.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="intro">
+            <h2 style="color: var(--gold); margin-bottom: 1.5rem;">Profesyonel Web Çözümleri</h2>
+            <p>Her işletmenin kendine özgü ihtiyaçlarını anlıyor ve bu doğrultuda özel çözümler sunuyoruz. İşletmenizin
+                büyüklüğü ne olursa olsun, size uygun bir paketimiz mutlaka var.</p>
+        </div>
+
+        <div class="packages">
+            <div class="package-card">
+                <h3>Business Starter</h3>
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="feature-title">Hazır Tasarım Üzerinden Marka Uyarlaması</div>
+                        <div class="feature-description">
+                            Modern ve test edilmiş hazır temalar üzerinden markanızın kimliğine uygun renk ve
+                            içerik düzenlemeleri yapılır.
+                            <ul class="sub-features">
+                                <li>Markanıza özel renk paleti</li>
+                                <li>İçerik yerleşimi</li>
+                            </ul>
+                        </div>
+                        <div class="feature-benefits">
+
+                            <ul>
+                                <div>✓ Hızlı kurulum</div>
+                                <div>✓ Maliyet etkin çözüm</div>
+                                <div>✓ Test edilmiş kullanıcı deneyimi</div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-title">Modern HTML + CSS + JS Statik Website</div>
+                        <div class="feature-description">
+                            En güncel web teknolojileri kullanılarak hızlı, güvenli ve modern bir website oluşturulur.
+                            <ul class="sub-features">
+                                <li>Modern web standartları</li>
+                                <li>Mobil uyumlu tasarım</li>
+                                <li>Hızlı yükleme süreleri</li>
+                            </ul>
+                        </div>
+                        <div class="feature-benefits">
+
+                            <ul>
+                                <div>✓ Yüksek performans</div>
+                                <div>✓ SEO dostu yapı</div>
+                                <div>✓ Kolay bakım</div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-title">GitHub Pages Hosting</div>
+                        <div class="feature-description">
+                            Güvenilir ve ücretsiz hosting çözümü ile websiteniz her zaman erişilebilir durumda.
+                            <ul class="sub-features">
+                                <li>SSL sertifikası</li>
+                                <li>Güvenilir altyapı</li>
+                                <li>Sürekli erişilebilirlik</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="price">5.000 TL'den başlayan fiyatlarla</div>
+                <div class="note">* Tasarım ve özelliklere göre fiyat değişiklik gösterebilir</div>
+            </div>
+
+            <div class="package-card popular">
+                <h3>Business Standard</h3>
+                <div class="features">
+
+                    <div class="feature-item">
+                        <div class="feature-title">Google Workspace Kurulumu ve Yönetimi</div>
+                        <div class="feature-description">
+                            Profesyonel iş araçları paketinin kurulumu ve yönetimi:
+                            <ul class="sub-features">
+                                <li>Kurumsal e-posta (@sirketiniz.com)</li>
+                                <li>Google Meet ile video konferans</li>
+                                <li>Google Calendar ile takvim yönetimi</li>
+                                <li>Google Drive ile dosya depolama</li>
+                                <li>Google Docs ile ofis uygulamaları</li>
+                            </ul>
+                        </div>
+                        <div class="feature-benefits">
+
+                            <ul>
+                                <div>✓ Profesyonel iş görünümü</div>
+                                <div>✓ Merkezi iletişim yönetimi</div>
+                                <div>✓ Ekip çalışması kolaylığı</div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-title">Google Analytics Entegrasyonu</div>
+                        <div class="feature-description">
+                            Detaylı ziyaretçi analizi ve raporlama:
+                            <ul class="sub-features">
+                                <li>Ziyaretçi davranışları takibi</li>
+                                <li>Trafik kaynakları analizi</li>
+                                <li>Dönüşüm takibi</li>
+                                <li>Kullanıcı demografisi</li>
+                            </ul>
+                        </div>
+                        <div class="feature-benefits">
+                            <ul>
+                                <div>✓ Veri odaklı kararlar</div>
+                                <div>✓ Pazarlama optimizasyonu</div>
+                                <div>✓ Performans takibi</div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-title">Google İşletme Profili Yönetimi</div>
+                        <div class="feature-description">
+                            Google üzerindeki işletme varlığınızın profesyonel yönetimi:
+                            <ul class="sub-features">
+                                <li>Google Haritalarda görünürlük</li>
+                                <li>Müşteri yorumları yönetimi</li>
+                                <li>İşletme bilgileri güncellemesi</li>
+                                <li>Özel kampanya ve duyurular</li>
+                            </ul>
+                        </div>
+                        <div class="feature-benefits">
+                            <ul>
+                                <div>✓ Yerel SEO avantajı</div>
+                                <div>✓ Müşteri etkileşimi artışı</div>
+                                <div>✓ Online itibar yönetimi</div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="price">50.000 TL'den başlayan fiyatlarla</div>
+                <div class="note">* Tasarım ve özelliklere göre fiyat değişiklik gösterebilir</div>
+            </div>
+
+            <div class="package-card">
+                <h3>Business Plus</h3>
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="feature-title">Dinamik Kontrol Paneli</div>
+                        <div class="feature-description">
+                            İşletmenize özel geliştirilen yönetim sistemi:
+                            <ul class="sub-features">
+                                <li>EJS tabanlı dinamik sistem</li>
+                                <li>İçerik yönetimi</li>
+                                <li>Kullanıcı yönetimi</li>
+                                <li>Ürün/hizmet yönetimi</li>
+                                <li>Veritabanı entegrasyonu ve yönetimi</li>
+                            </ul>
+                        </div>
+                        <div class="feature-benefits">
+                            <ul>
+                                <div>✓ Tam kontrol ve yönetim</div>
+                                <div>✓ Anlık içerik güncelleme</div>
+                                <div>✓ Özelleştirilebilir yapı</div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-title">Yönetici Paneli Özellikleri</div>
+                        <div class="feature-description">
+                            İşletmenize özel yönetim araçları:
+                            <ul class="sub-features">
+                                <li>Ürün/Hizmet ekleme-çıkarma sistemi</li>
+                                <li>Anlık fiyat güncelleme kontrolü</li>
+                                <li>Menü ve kategori yönetimi</li>
+                                <li>Medya ve görsel içerik kontrolü</li>
+                            </ul>
+                        </div>
+                        <div class="feature-benefits">
+                            <ul>
+                                <div>✓ Kampanya yönetimi</div>
+                                <div>✓ Müşteri iletişim modülü</div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="price">110.000 TL'den başlayan fiyatlarla</div>
+                <div class="note">* Tasarım ve özelliklere göre fiyat değişiklik gösterebilir</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
