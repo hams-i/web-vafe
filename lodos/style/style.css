@@ -769,21 +769,21 @@ footer #footer-container #footer-bottom-container #copyright {
 }
 @font-face {
   font-family: DMSans-Light;
-  src: url("/fonts/DMSans-Light.ttf");
+  src: url("./fonts/DMSans-Light.ttf");
 }
 @font-face {
   font-family: DMSans-Regular;
-  src: url("/fonts/DMSans-Regular.ttf");
+  src: url("./fonts/DMSans-Regular.ttf");
 }
 @font-face {
   font-family: Fustat-ExtraBold;
-  src: url("/fonts/Fustat-ExtraBold.ttf");
+  src: url("./fonts/Fustat-ExtraBold.ttf");
 }
 @font-face {
   font-family: Fustat-Regular;
-  src: url("/fonts/Fustat-Regular.ttf");
+  src: url("./fonts/Fustat-Regular.ttf");
 }
 @font-face {
   font-family: Lustira;
-  src: url("/fonts/Lustira.ttf");
+  src: url("./fonts/Lustira.ttf");
 }/*# sourceMappingURL=style.css.map */
