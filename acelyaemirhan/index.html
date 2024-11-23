@@ -153,6 +153,23 @@
             font-size: 24px;
         }
 
+        #word-container {
+            font-size: 4rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+
+
+            position: absolute;
+            bottom: 50px;
+            display: flex;
+            align-items: center;
+            font-weight: lighter;
+            justify-content: center;
+            font-family: Waterfall;
+            z-index: 1;
+        }
+
         @keyframes float {
             0% {
                 transform: translateY(-100dvh);
@@ -203,6 +220,11 @@
                 padding: 10px 30px;
             }
         }
+
+        @font-face {
+            font-family: Waterfall;
+            src: url("./Waterfall.ttf");
+        }
     </style>
 </head>
 
@@ -232,7 +254,7 @@
             </div>
         </div>
     </div>
-
+    <div id="word-container"></div>
     <script>
         const handleButtonState = (event, className) => {
             const target = event.target.closest('.button');
@@ -256,11 +278,6 @@
                     console.error('Error playing music:', error);
                 });
         });
-
-
-
-
-
 
         const targetDate = new Date('2025-04-26').getTime();
 
@@ -297,6 +314,26 @@
         }
 
         setInterval(createHearts, 250);
+
+
+        const words = ["'26.04'", "'Vadi İstanbul'", "'30.09.2024'", "'Eserdin Tenimde'", "'14:45'"];
+        const container = document.getElementById('word-container');
+        let index = 0;
+
+        function showWord() {
+            container.textContent = words[index];
+            container.style.opacity = 1;
+
+            setTimeout(() => {
+                container.style.opacity = 0;
+                setTimeout(() => {
+                    index = (index + 1) % words.length;
+                    showWord();
+                }, 1000);
+            }, 2000);
+        }
+
+        showWord();
     </script>
 </body>
 
