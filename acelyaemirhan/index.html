@@ -9,6 +9,7 @@
     <meta name="msapplication-navbutton-color" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -29,6 +30,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+
         body {
             min-height: 100dvh;
             font-size: 16px;
@@ -38,6 +40,10 @@
             background: linear-gradient(45deg, #800000, #ff3366);
             color: white;
             overflow: hidden;
+        }
+
+        .clicked {
+            transform: scale(.96);
         }
 
         ::-webkit-scrollbar-track {
@@ -98,6 +104,22 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             opacity: 0.9;
+        }
+
+        #music-button {
+            position: absolute;
+            top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            background: linear-gradient(45deg, #ff5983, #ff3366);
+            border-radius: .6rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            user-select: none;
+            font-size: 1.5rem;
+            padding: 10px 30px;
         }
 
         @keyframes pulse {
@@ -175,14 +197,20 @@
             .heart {
                 font-size: 1.1rem;
             }
+
+            #music-button {
+                font-size: 1rem;
+                padding: 10px 30px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <audio autoplay loop>
+    <audio id="background-music" loop>
         <source src="./music.mp3" type="audio/mpeg">
-      </audio>
+    </audio>
+    <div id="music-button" class="button">♫ Şarkıyı Çal ♫</div>
     <div class="hearts" id="hearts"></div>
     <div class="countdown-container">
         <div class="countdown">
@@ -206,6 +234,34 @@
     </div>
 
     <script>
+        const handleButtonState = (event, className) => {
+            const target = event.target.closest('.button');
+            if (target) target.classList[event.type === 'mousedown' || event.type === 'touchstart' ? 'add' : 'remove'](className);
+        };
+        document.querySelectorAll('.button').forEach(button => {
+            ['mousedown', 'touchstart', 'mouseup', 'mouseleave', 'touchend'].forEach(eventType => {
+                button.addEventListener(eventType, event => handleButtonState(event, 'clicked'));
+            });
+        });
+
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('music-button');
+
+        playButton.addEventListener('click', () => {
+            music.play()
+                .then(() => {
+                    playButton.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error playing music:', error);
+                });
+        });
+
+
+
+
+
+
         const targetDate = new Date('2025-04-26').getTime();
 
         function updateCountdown() {
