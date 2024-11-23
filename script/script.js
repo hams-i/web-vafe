@@ -2,6 +2,7 @@ const handleButtonState = (event, className) => {
     const target = event.target.closest('.button');
     if (target) target.classList[event.type === 'mousedown' || event.type === 'touchstart' ? 'add' : 'remove'](className);
 };
+
 document.querySelectorAll('.button').forEach(button => {
     ['mousedown', 'touchstart', 'mouseup', 'mouseleave', 'touchend'].forEach(eventType => {
         button.addEventListener(eventType, event => handleButtonState(event, 'clicked'));
