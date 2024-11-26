@@ -79,10 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#version').innerText = data.version;
     });
 
-    /* For Development */
-    AOS.init({ offset: 80, duration: 1000 });
     document.body.classList.remove('no-scroll');
-    /* const loading_screen = document.getElementById("loading-screen");
+    const loading_screen = document.getElementById("loading-screen");
     const percentageElement = document.getElementById("percentage");
     let percentage = 0;
     const interval = setInterval(() => {
@@ -93,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('no-scroll');
             AOS.init({ offset: 80, duration: 1000 });
         }
-    }, 10); */
+    }, 10);
 });
 
 document.querySelector("#brand").addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
