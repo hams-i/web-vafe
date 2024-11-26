@@ -1,4 +1,22 @@
-const phrases = ["Zamanın Ötesinde", "Cesur Durus", "Zarafetin Dili", "Tarzına Güven", "Özgün Durusun", "Zarifliğin Sırrı", "Stilini Kesfet", "Kusursuz Detaylar", "Stilin Gücü", "Tarzın Gücü", "Etkileyici Durus", "Sıklığın Ötesinde", "Tarzını Yansıt", "Trendlerin Ötesinde", "Özgün Çizgiler", "Özgün İmza", "Tarzını Olustur"];
+const phrases = [
+    "Au-Delà du Temps",
+    "Posture Courageuse",
+    "Le Langage de l'Élégance",
+    "Fais Confiance à Ton Style",
+    "Ton Attitude Unique",
+    "Le Secret de l'Élégance",
+    "Découvre Ton Style",
+    "Détails Parfaits",
+    "La Force du Style",
+    "La Puissance du Style",
+    "Posture Impressionnante",
+    "Au-Delà de la Classe",
+    "Exprime Ton Style",
+    "Au-Delà des Tendances",
+    "Lignes Uniques",
+    "Signature Unique",
+    "Crée Ton Style"
+];
 
 const collections = [
     { title: "Élégance Éternelle: La Collection Plage", img: "elegance-eternelle-1" },
