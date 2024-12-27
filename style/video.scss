@@ -1,0 +1,264 @@
+:root {
+    --title-size: 4.5rem;
+    --title-size-s: 1.4rem;
+}
+
+ol {
+    list-style: none;
+}
+
+input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+
+#videoOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    cursor: zoom-out;
+
+    #videoPlayer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+        cursor: default;
+    }
+
+    #closeVideo {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        color: var(--text-color);
+        background: var(--error-color);
+        font-size: 30px;
+        cursor: pointer;
+        user-select: none;
+        z-index: 1001;
+        padding: 0 14px;
+
+        &:hover {
+            background: var(--second-colourful);
+        }
+    }
+}
+
+main {
+    background: var(--main-color);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    .top-container {
+        position: fixed;
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 50px 0 50px;
+        font-size: var(--title-size-s);
+        font-family: 'Halyard Display';
+        user-select: none;
+        z-index: 7;
+
+        span {
+            a {
+                color: var(--text-color);
+            }
+
+            color: var(--text-color);
+            cursor: pointer;
+        }
+    }
+
+    .video-screen {
+        min-height: 100vh;
+        position: relative;
+        padding: 0px 0px 50px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .top-text {
+            width: 100%;
+            padding-top: 100px;
+            font-family: 'season';
+            text-align: center;
+
+            .the-title {
+                font-size: var(--title-size);
+            }
+
+            .second-title {
+                font-size: var(--title-size-s);
+            }
+        }
+
+        .video-screen-container {
+
+            width: var(--container-width);
+            padding: 0 20px;
+            
+            .title-container {
+                width: var(--full-width);
+                text-align: center;
+
+                h1 {
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-size: var(--text-size);
+                    color: var(--second-text-color);
+                }
+
+                span {
+                    text-decoration: underline;
+                }
+
+            }
+
+            .video-container {
+                padding-top: 50px;
+
+                .filters {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                    user-select: none;
+
+                    label {
+                        padding: 0.5rem 1rem;
+                        margin-bottom: 0.25rem;
+                        min-width: 50px;
+                        cursor: pointer;
+                        transition: all 0.1s;
+
+                        &:hover {
+                            background: var(--colourful);
+                            color: var(--text-color);
+                        }
+                    }
+
+                    * {
+                        display: inline-block;
+                    }
+                }
+
+                .grid {
+                    width: 100%;
+
+                    .grid-item {
+                        margin-bottom: 16px;
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out;
+                        cursor: pointer;
+                        position: relative;
+
+                        -webkit-tap-highlight-color: transparent;
+                        outline: none;
+                        text-decoration: none;
+
+                        img {
+                            width: 100%;
+                            display: block;
+                        }
+
+                        .play-background {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background: rgba(0, 0, 0, 0.3);
+                            user-select: none;
+                            opacity: 0;
+                            transition: .2s ease-out;
+
+                            span {
+                                position: absolute;
+                                font-size: var(--title-size);
+                            }
+                        }
+
+                        &.loaded {
+                            opacity: 1;
+                        }
+
+                        &:hover>.play-background {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                #loadMore {
+                    display: block;
+                    margin: 20px auto;
+                    padding: 10px 20px;
+                    background-color: var(--colourful);
+                    color: white;
+                    border: none;
+                    z-index: 5;
+                    position: relative;
+                    cursor: pointer;
+                    user-select: none;
+                }
+            }
+        }
+    }
+}
+
+[value="All"]:checked~.filters [for="All"],
+[value="restaurant"]:checked~.filters [for="restaurant"],
+[value="fashion"]:checked~.filters [for="fashion"],
+[value="comment"]:checked~.filters [for="comment"],
+[value="travel"]:checked~.filters [for="travel"] {
+    background: var(--colourful);
+    color: var(--text-color);
+}
+
+[value="All"]:checked~.grid [data-category] {
+    display: block;
+}
+
+[value="restaurant"]:checked~.grid .grid-item:not([data-category~="restaurant"]),
+[value="fashion"]:checked~.grid .grid-item:not([data-category~="fashion"]),
+[value="comment"]:checked~.grid .grid-item:not([data-category~="comment"]),
+[value="travel"]:checked~.grid .grid-item:not([data-category~="travel"]) {
+    display: none;
+}
+
+@media screen and (max-width: 1366px) {
+    .video-screen-container {
+        width: 100vw !important;
+    }
+}
+
+@font-face {
+    font-family: 'season';
+    src: url('https://cdn.prod.website-files.com/6438535c1aabe62f2f5d5d86/65df136de065c3584e60266c_the-season.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('https://cdn.prod.website-files.com/6438535c1aabe62f2f5d5d86/65de05aae7d589c557773a2e_halyard-display.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}

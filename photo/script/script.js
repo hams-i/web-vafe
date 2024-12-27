@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
             loading_screen.style.display = "none";
             document.body.classList.remove('no-scroll');
         }
-    }, 10);
+    }, 0);
 });
 
 document.querySelector('.home').addEventListener('click', function () {
@@ -92,12 +92,23 @@ document.querySelector('.home').addEventListener('click', function () {
     });
 });
 
-document.querySelector('.contact-button').addEventListener('click', function () {
-    window.scrollTo({
-        top: document.body.scrollHeight || document.documentElement.scrollHeight,
-        behavior: 'smooth'
-    });
+const themeToggle = document.getElementById('themeToggle');
+const icon = themeToggle.querySelector('.material-icons');
+
+// Get theme from localStorage or default to dark
+const currentTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', currentTheme);
+icon.textContent = currentTheme === 'light' ? 'dark_mode' : 'light_mode';
+
+themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    icon.textContent = isDark ? 'dark_mode' : 'light_mode';
+    localStorage.setItem('theme', newTheme);
 });
+
+
 
 window.addEventListener('keydown', function (event) {
     if (modal.style.display === "flex") {
@@ -110,20 +121,6 @@ window.addEventListener('keydown', function (event) {
             document.body.classList.remove('no-scroll');
         }
     }
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const currentYearElement = document.querySelector('.current-year');
-    const year = new Date().getFullYear();
-
-    if (currentYearElement) {
-        currentYearElement.textContent = year;
-    }
-    const version = document.querySelector('#version');
-    fetch('/version.json')
-        .then(response => response.json())
-        .then(data => {
-            version.innerText = data.version;
-        })
 });
 
 window.onclick = function (event) {

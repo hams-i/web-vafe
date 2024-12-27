@@ -9,107 +9,49 @@ document.querySelectorAll('.button').forEach(button => {
     });
 });
 
-function checkScroll() {
-    const header = document.querySelector('header');
+document.addEventListener("DOMContentLoaded", function () {
+    let loading_screen = document.getElementById("loading-screen");
+    let percentageElement = document.getElementById("percentage");
 
-    const currentScroll = window.scrollY;
-    if (currentScroll > 150) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-    updateActiveLink();
-}
+    let percentage = 0;
 
-function updateActiveLink() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('header nav ul a');
+    let interval = setInterval(function () {
+        percentage += 1;
+        percentageElement.textContent = "% " + percentage;
 
-    let currentSectionId = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (window.scrollY >= sectionTop - sectionHeight / 3) {
-            currentSectionId = section.getAttribute('id');
+        if (percentage >= 100) {
+            clearInterval(interval);
+            loading_screen.style.display = "none";
+            document.body.classList.remove('no-scroll');
         }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSectionId}`) {
-            link.classList.add('active');
-        }
-    });
-}
-
-document.querySelectorAll('.link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-
-            history.pushState(null, null, ' ');
-
-        }
-    });
+    }, 0);
 });
 
-window.addEventListener('scroll', checkScroll);
+const themeToggle = document.getElementById('themeToggle');
+const icon = themeToggle.querySelector('.material-icons');
 
+// Get theme from localStorage or default to dark
+const currentTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', currentTheme);
+icon.textContent = currentTheme === 'light' ? 'dark_mode' : 'light_mode';
 
-document.addEventListener('DOMContentLoaded', function () {
-    checkScroll();
-    updateActiveLink();
-    const currentYearElement = document.querySelector('.current-year');
-    const year = new Date().getFullYear();
-
-    if (currentYearElement) {
-        currentYearElement.textContent = year;
-    }
+themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    icon.textContent = isDark ? 'dark_mode' : 'light_mode';
+    localStorage.setItem('theme', newTheme);
 });
 
-window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader-container');
-    loader.style.opacity = 0;
-    setTimeout(() => {
-        loader.style.display = 'none';
-    }, 400);
-
-    const allimages = document.querySelectorAll('img');
-    const allatags = document.querySelectorAll('a');
-
-    allimages.forEach(image => {
-        image.addEventListener('dragstart', e => e.preventDefault());
-    });
-
-    allatags.forEach(aTag => {
-        aTag.addEventListener('dragstart', e => e.preventDefault());
-    });
-});
-
-document.querySelector('.top-button').addEventListener('click', function () {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-
-document.querySelector('.hamburger').addEventListener('click', function () {
-    document.querySelector('.hamburger').classList.toggle('active');
-    document.querySelector('nav').classList.toggle('active');
-});
-
-
-const version = document.querySelector('#version');
-fetch('version.json')
-    .then(response => response.json())
-    .then(data => {
-        version.innerText = data.version;
-    })
+SmoothScroll({
+    animationTime: 800,
+    stepSize: 75,
+    accelerationDelta: 30,
+    accelerationMax: 2,
+    keyboardSupport: true,
+    arrowScroll: 50,
+    pulseAlgorithm: true,
+    pulseScale: 4,
+    pulseNormalize: 1,
+    touchpadSupport: true,
+})

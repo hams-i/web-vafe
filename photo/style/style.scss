@@ -1,7 +1,7 @@
 :root {
     --main-color: #111;
     --text-color: #ffffff;
-    --colourful: #ff966c;
+    --blue: #00376b;
     --title-size-l: 7rem;
     --title-size: 4.5rem;
     --title-size-m: 3rem;
@@ -29,6 +29,13 @@
 ::selection {
     color: var(--main-color);
     background: var(--text-color);
+}
+
+
+html[data-theme="light"] {
+    --main-color: #eee;
+    --text-color: #111;
+    --blue: #afcfee;
 }
 
 body,
@@ -64,28 +71,6 @@ html {
     }
 }
 
-.contact-container {
-    padding: 20px;
-    background: var(--text-color);
-    color: var(--main-color);
-    font-size: var(--title-size-s);
-    width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-    cursor: default;
-    font-family: 'Halyard Display';
-    position: relative;
-    top: 180px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    a {
-        color: var(--main-color);
-        text-decoration: underline;
-    }
-}
-
 #loading-screen {
     background: var(--main-color);
     width: 100vw;
@@ -112,14 +97,17 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 10px 50px 0 50px;
     font-size: var(--title-size-s);
     font-family: 'Halyard Display';
     user-select: none;
     z-index: 7;
 
     span {
-
+        a {
+            color: var(--text-color);
+        }
+        color: var(--text-color);
         cursor: pointer;
     }
 }
@@ -128,9 +116,15 @@ html {
     width: 100%;
     font-family: 'season';
     text-align: center;
-    font-size: var(--title-size);
     position: relative;
     top: 100px;
+
+    .the-title{
+        font-size: var(--title-size);
+    }
+    .second-title {
+        font-size: var(--title-size-s);
+    }
 }
 
 .gallery-container {
@@ -244,7 +238,8 @@ html {
     justify-content: center;
     align-items: center;
 }
-.coypright-container{
+
+.coypright-container {
     font-size: 16px;
 }
 
@@ -331,10 +326,12 @@ html {
     :root {
         --title-size: 3rem;
     }
+
     .contact-container {
         font-size: var(--text-size);
     }
-    .coypright-container{
+
+    .coypright-container {
         font-size: 14px;
     }
 }
