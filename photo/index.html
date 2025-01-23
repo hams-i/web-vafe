@@ -23,8 +23,8 @@
         href="https://cdn.prod.website-files.com/6438535c1aabe62f2f5d5d86/65de05aae7d589c557773a2e_halyard-display.otf"
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.min.css">
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.2/dist/photoswipe.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
 </head>
 
@@ -53,17 +53,10 @@
         <div class="gallery-container">
             <div class="gallery" id="gallery"></div>
         </div>
-
     </main>
 
-    <div id="myModal" class="modal">
-        <span class="close btn">&times;</span>
-        <button class="nav-button prev btn">&lt;</button>
-        <button class="nav-button next btn">&gt;</button>
-        <img class="modal-content" id="modalImg">
-        <div id="loader" class="loader"></div>
-    </div>
-
+    <script src="https://unpkg.com/photoswipe@5.4.2/dist/umd/photoswipe.umd.min.js"></script> 
+    <script src="https://unpkg.com/photoswipe@5.4.2/dist/umd/photoswipe-lightbox.umd.min.js"></script>
     <script>
         let currentPage = "photos";
     </script>

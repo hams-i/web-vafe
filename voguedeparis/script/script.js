@@ -74,10 +74,6 @@ document.querySelectorAll('.link').forEach(anchor => {
 
 document.addEventListener('DOMContentLoaded', () => {
     updateDOM();
-    document.querySelector('.current-year').textContent = new Date().getFullYear();
-    fetch('/version.json').then(response => response.json()).then(data => {
-        document.querySelector('#version').innerText = data.version;
-    });
 
     document.body.classList.remove('no-scroll');
     const loading_screen = document.getElementById("loading-screen");

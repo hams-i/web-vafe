@@ -1,80 +1,392 @@
 [
-    {"path": "69.webp"},
-    {"path": "71.webp"},
-    {"path": "70.webp"},
-    {"path": "77.webp"},
-    {"path": "78.webp"},
-    {"path": "1.webp"},
-    {"path": "2.webp"},
-    {"path": "3.webp"},
-    {"path": "4.webp"},
-    {"path": "5.webp"},
-    {"path": "6.webp"},
-    {"path": "7.webp"},
-    {"path": "8.webp"},
-    {"path": "9.webp"},
-    {"path": "10.webp"},
-    {"path": "11.webp"},
-    {"path": "12.webp"},
-    {"path": "13.webp"},
-    {"path": "14.webp"},
-    {"path": "15.webp"},
-    {"path": "16.webp"},
-    {"path": "17.webp"},
-    {"path": "18.webp"},
-    {"path": "19.webp"},
-    {"path": "20.webp"},
-    {"path": "21.webp"},
-    {"path": "22.webp"},
-    {"path": "23.webp"},
-    {"path": "24.webp"},
-    {"path": "25.webp"},
-    {"path": "26.webp"},
-    {"path": "27.webp"},
-    {"path": "28.webp"},
-    {"path": "29.webp"},
-    {"path": "30.webp"},
-    {"path": "31.webp"},
-    {"path": "32.webp"},
-    {"path": "33.webp"},
-    {"path": "34.webp"},
-    {"path": "35.webp"},
-    {"path": "36.webp"},
-    {"path": "37.webp"},
-    {"path": "38.webp"},
-    {"path": "39.webp"},
-    {"path": "40.webp"},
-    {"path": "41.webp"},
-    {"path": "42.webp"},
-    {"path": "43.webp"},
-    {"path": "44.webp"},
-    {"path": "45.webp"},
-    {"path": "46.webp"},
-    {"path": "47.webp"},
-    {"path": "48.webp"},
-    {"path": "49.webp"},
-    {"path": "50.webp"},
-    {"path": "51.webp"},
-    {"path": "52.webp"},
-    {"path": "53.webp"},
-    {"path": "54.webp"},
-    {"path": "55.webp"},
-    {"path": "56.webp"},
-    {"path": "57.webp"},
-    {"path": "58.webp"},
-    {"path": "59.webp"},
-    {"path": "60.webp"},
-    {"path": "61.webp"},
-    {"path": "62.webp"},
-    {"path": "63.webp"},
-    {"path": "64.webp"},
-    {"path": "65.webp"},
-    {"path": "66.webp"},
-    {"path": "67.webp"},
-    {"path": "68.webp"},
-    {"path": "72.webp"},
-    {"path": "73.webp"},
-    {"path": "74.webp"},
-    {"path": "75.webp"},
-    {"path": "76.webp"}
+    {
+        "path": "78.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "77.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "76.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "75.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "74.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "73.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "72.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "71.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "70.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "69.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "68.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "67.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "66.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "65.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "64.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "63.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "62.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "61.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "60.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "59.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "58.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "57.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "56.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "55.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "54.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "53.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "52.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "51.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "50.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "49.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "48.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "47.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "46.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "45.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "44.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "43.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "42.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "41.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "40.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "39.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "38.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "37.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "36.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "35.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "34.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "33.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "32.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "31.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "30.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "29.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "28.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "27.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "26.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "25.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "24.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "23.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "22.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "21.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "20.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "19.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "18.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "17.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "16.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "15.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "14.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "13.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "12.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "11.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "10.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "9.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "8.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "7.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "6.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "5.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "4.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "3.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "2.webp",
+        "width": 1920,
+        "height": 1080
+    },
+    {
+        "path": "1.webp",
+        "width": 1920,
+        "height": 1080
+    }
 ]

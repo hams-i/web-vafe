@@ -39,5 +39,23 @@
     {"path": "60.webp"},
     {"path": "64.webp"},
     {"path": "75.webp"},
-    {"path": "76.webp"}
+    {"path": "76.webp"},
+    {
+        "path": "23.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": "🌿 Şefimizin özenle hazırladığı organik lezzetlerle her lokmada tazeliği ve eşsiz tatları keşfedin, damağınızı şımartın! 🌸"
+    },
+    {
+        "path": "15.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": "☕ Baristalarımızın özenle hazırladığı sıcak ve soğuk içeceklerimizle her yudumda ferahlığı ve lezzeti deneyimleyin; restoranımızda keyif dolu bir mola verin!"
+    },
+    {
+        "path": "68.webp",
+        "width": 1920,
+        "height": 1080,
+        "caption": "🌅 Muhteşem manzaramız eşliğinde, enfes yemeklerimizi tadarken huzuru ve doğanın büyüsünü her anınızda doğanın huzurunu ve tazeliğini hissedin. 🌿✨"
+    }
 ]
