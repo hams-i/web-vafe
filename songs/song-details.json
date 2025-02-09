@@ -1,0 +1,130 @@
+[
+    {
+        "title": "Night on the Delta",
+        "duration": "4:15",
+        "cover": "song-img/Night on the Delta.jpeg",
+        "audio": "song-list/Night on the Delta.mp3",
+        "bpm": 98,
+        "color": "#191970"
+    },
+    {
+        "title": "Afro-Dreams",
+        "duration": "4:05",
+        "cover": "song-img/Afro-Dreams.jpeg",
+        "audio": "song-list/Afro-Dreams.mp3",
+        "bpm": 105,
+        "color": "#CD853F"
+    },
+    {
+        "title": "Мэта",
+        "duration": "3:30",
+        "cover": "song-img/Мэта.jpeg",
+        "audio": "song-list/Мэта.mp3",
+        "bpm": 95,
+        "color": "#800080"
+    },
+    {
+        "title": "Мрачный рэп о городской жизни",
+        "duration": "3:35",
+        "cover": "song-img/Мрачный рэп о городской жизни.jpeg",
+        "audio": "song-list/Мрачный рэп о городской жизни.mp3",
+        "bpm": 90,
+        "color": "#2F4F4F"
+    },
+    {
+        "title": "Perdu dans cette ville",
+        "duration": "4:35",
+        "cover": "song-img/Perdu dans cette ville.jpeg",
+        "audio": "song-list/Perdu dans cette ville.mp3",
+        "bpm": 95,
+        "color": "#4169E1"
+    },
+    {
+        "title": "Femme sans fantaisie",
+        "duration": "4:00",
+        "cover": "song-img/Femme sans fantaisie.jpeg",
+        "audio": "song-list/Femme sans fantaisie.mp3",
+        "bpm": 110,
+        "color": "#FF1493"
+    },
+    {
+        "title": "Echoes of the Split",
+        "duration": "4:45",
+        "cover": "song-img/Echoes of the Split.jpeg",
+        "audio": "song-list/Echoes of the Split.mp3",
+        "bpm": 135,
+        "color": "#9932CC"
+    },
+    {
+        "title": "Oceanic Reverie",
+        "duration": "3:40",
+        "cover": "song-img/Oceanic Reverie.jpeg",
+        "audio": "song-list/Oceanic Reverie.mp3",
+        "bpm": 90,
+        "color": "#00CED1"
+    },
+    {
+        "title": "La Femme Solaire",
+        "duration": "4:25",
+        "cover": "song-img/La Femme Solaire.jpeg",
+        "audio": "song-list/La Femme Solaire.mp3",
+        "bpm": 115,
+        "color": "#FFA500"
+    },
+    {
+        "title": "La Nuit Électrique",
+        "duration": "4:30",
+        "cover": "song-img/La Nuit Électrique.jpeg",
+        "audio": "song-list/La Nuit Électrique.mp3",
+        "bpm": 128,
+        "color": "#4B0082"
+    },
+    {
+        "title": "Candy in the Street",
+        "duration": "3:55",
+        "cover": "song-img/Candy in the Street.jpeg",
+        "audio": "song-list/Candy in the Street.mp3",
+        "bpm": 125,
+        "color": "#FF69B4"
+    },
+    {
+        "title": "Duck DJ in the Dark",
+        "duration": "4:15",
+        "cover": "song-img/Duck DJ in the Dark.jpeg",
+        "audio": "song-list/Duck DJ in the Dark.mp3",
+        "bpm": 130,
+        "color": "#FFD700"
+    },
+    {
+        "title": "Ashes of the Sky",
+        "duration": "4:00",
+        "cover": "song-img/Ashes of the Sky.jpeg",
+        "audio": "song-list/Ashes of the Sky.mp3",
+        "bpm": 128,
+        "color": "#4682B4"
+    },
+    {
+        "title": "Shadows fall, lights fade",
+        "duration": "4:10",
+        "cover": "song-img/Shadows fall, lights fade.jpeg",
+        "audio": "song-list/Shadows fall, lights fade.mp3",
+        "bpm": 95,
+        "color": "#483D8B"
+    },
+    {
+        "title": "Shatter the chains",
+        "duration": "3:45",
+        "cover": "song-img/Shatter the chains.jpeg",
+        "audio": "song-list/Shatter the chains.mp3",
+        "bpm": 140,
+        "color": "#FF4500"
+    },
+    {
+        "title": "Moonlit Echoes",
+        "duration": "3:50",
+        "cover": "song-img/Moonlit Echoes.jpeg",
+        "audio": "song-list/Moonlit Echoes.mp3",
+        "bpm": 120,
+        "color": "#8A2BE2"
+    }
+]

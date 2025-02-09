@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="No text, just my work. Fix the problems and focus on making everything better.">
+    <meta name="author" content="M.E.K.">
+    <meta property="og:title" content="M.E.K.">
+    <meta property="og:description"
+        content="No text, just my work. Fix the problems and focus on making everything better.">
+    <meta property="og:image" content="/images/dot.png">
+    <meta property="og:url" content="https://webvafe.com/photo">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="M.E.K.">
+    <meta name="twitter:description"
+        content="No text, just my work. Fix the problems and focus on making everything better.">
+    <meta name="twitter:image" content="/images/dot.png">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <div class="copy-right" style="text-align: center; margin-top: 20px;">
+        <p>Copyright &copy; 2025 Creative Commons Attribution-NonCommercial (CC BY-NC)
+        </p>
+    </div>
+    <div class="container">
+        <div class="songs-grid">
+            <!-- Songs will be dynamically added here -->
+
+        </div>
+    </div>
+
+    <div class="player-container" style="display: none;">
+        <button class="close-player">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="player-content">
+            <div class="song-info">
+                <div class="current-song-image">
+                    <img src="" alt="Current Song">
+                </div>
+                <div class="song-details">
+                    <h3 class="current-song-title"></h3>
+                    <div class="time-info">
+                        <span class="current-time">0:00</span> / 
+                        <span class="total-time">0:00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="repeat-btn" title="Repeat Song">
+                    <i class="fas fa-repeat"></i>
+                </button>
+                <button class="prev-btn" title="Previous Song">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button class="play-btn" title="Play/Pause">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="next-btn" title="Next Song">
+                    <i class="fas fa-forward"></i>
+                </button>
+                <button class="autoplay-toggle active" title="Auto Play">
+                    <i class="fas fa-infinity"></i>
+                </button>
+            </div>
+
+            <div class="volume-controls">
+                <button class="volume-btn" title="Volume">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="volume-slider">
+                    <input type="range" min="0" max="100" value="20" title="Volume Level">
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="audio-visualizer">
+            <canvas id="visualizer"></canvas>
+        </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+    <script src="songs.js"></script>
+</body>
+</html>
