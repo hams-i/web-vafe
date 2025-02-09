@@ -543,4 +543,66 @@ body {
     }
 }
 
+.top-text {
+    width: 100%;
+    font-family: 'season';
+    text-align: center;
+    position: relative;
 
+    .the-title{
+        font-size: 4.5rem;
+    }
+    .second-title {
+        font-size: 1.4rem;
+    }
+}
+
+.top-container {
+    position: fixed;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: 'Halyard Display';
+    user-select: none;
+    z-index: 7;
+
+    span {
+        a {
+            color: var(--text-color);
+        }
+        color: var(--text-color);
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 1140px) {
+    .top-container {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .the-title{
+        font-size: 3.5rem !important;
+    }
+    .top-container{
+        padding: 0 5px;
+    }
+}
+@media screen and (max-width: 560px) {
+    .top-container{
+        font-size: 1rem;
+    }
+}
+
+@font-face {
+    font-family: 'season';
+    src: url('https://cdn.prod.website-files.com/6438535c1aabe62f2f5d5d86/65df136de065c3584e60266c_the-season.woff2') format('woff2');
+    font-weight: 400;
+
+    font-style: normal;
+    font-display: swap;
+}
