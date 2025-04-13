@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <style>
         .replay-button {
-            position: fixed;
+            position: absolute;
             top: 20px;
             right: 20px;
             background-color: rgba(255, 255, 255, 0.2);
@@ -49,6 +49,9 @@
     <div id="counter-page" style="display: none;">
         <audio id="background-music" loop>
             <source src="./music/music.mp3" type="audio/mp3">
+        </audio>
+        <audio id="love-music" loop>
+            <source src="./music/love-music.mp3" type="audio/mp3">
         </audio>
         <div id="music-button" class="button">♫ Şarkıyı Çal ♫</div>
         <div class="countdown-container">
@@ -79,7 +82,7 @@
 
 
     <div id="home-screen">
-        <div class="replay-button" onclick="replayAnimation()">Tekrar İzle</div>
+        <div class="replay-button" onclick="replayAnimation()">Tekrar</div>
         <section id="home-page">
             <p id="title">ACELYA ♥ EMIRHAN</p>
             <div class="music-container" onclick="aud_play_pause()">
@@ -144,6 +147,7 @@
                     <li><img src="images/24.jpg" class="photo" loading="lazy" /></li>
                     <li><img src="images/25.jpg" class="photo" loading="lazy" /></li>
                     <li><img src="images/26.jpg" class="photo" loading="lazy" /></li>
+                    <li><img src="images/27.jpg" class="photo" loading="lazy" /></li>
                 </ul>
             </div>
         </section>
@@ -203,11 +207,13 @@
         });
 
         const music = document.getElementById('background-music');
+        const loveMusic = document.getElementById('love-music');
         const playButton = document.getElementById('music-button');
 
 
         function aud_play_pause() {
             if (music.paused) {
+                loveMusic.pause();
                 music.play();
             } else {
                 music.pause();
@@ -216,6 +222,7 @@
 
         playButton.addEventListener('click', () => {
             if (music.paused) {
+                loveMusic.pause();
                 music.play()
                     .then(() => {
                         playButton.innerHTML = '♫ Şarkıyı Durdur ♫';
@@ -370,10 +377,15 @@
             if (distance <= 10000 && !document.querySelector('#counter-page').classList.contains('fireworks-started')) {
                 document.querySelector('#counter-page').classList.add('fireworks-started');
                 celebrationEffects();
-                if (music.paused) {
-                    music.play();
-                    playButton.innerHTML = '♫ Şarkıyı Durdur ♫';
+                if (!music.paused) {
+                    music.pause();
                 }
+                loveMusic.currentTime = 11; // 14. saniyeden başla
+                loveMusic.play();
+                playButton.innerHTML = '♫ Şarkıyı Durdur ♫';
+                playButton.classList.add('disabled');
+                playButton.style.opacity = '0.5';
+                playButton.style.pointerEvents = 'none';
                 setTimeout(() => {
                     showMainContent();
                 }, 10000);
@@ -390,7 +402,12 @@
 
             music.currentTime = 0;
             music.pause();
+            loveMusic.currentTime = 0;
+            loveMusic.pause();
             playButton.innerHTML = '♫ Şarkıyı Çal ♫';
+            playButton.classList.remove('disabled');
+            playButton.style.opacity = '1';
+            playButton.style.pointerEvents = 'auto';
 
             document.querySelector('#home-screen').style.display = 'none';
             document.querySelector('#counter-page').style.display = 'flex';
