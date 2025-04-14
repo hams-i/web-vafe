@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sessiz Sayfa</title>
+</head>
+<body>
+    <!-- Bu sayfa ses çalmak için izinleri otomatik olarak almak için kullanılır -->
+    <script>
+        // AudioContext oluştur
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Sessiz ses çal
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        // Neredeyse duyulamayacak seviye 
+        gainNode.gain.value = 0.01;
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.type = 'sine';
+        oscillator.frequency.value = 1;
+        
+        oscillator.start(0);
+        
+        // Parent sayfaya hazır olduğumuzu bildir
+        window.parent.postMessage('audioUnlocked', '*');
+        
+        // 1 saniye sonra durdur
+        setTimeout(() => {
+            oscillator.stop();
+            
+            // Sayfadaki tüm ses oynatıcılarını etkinleştir
+            const enableInParent = () => {
+                window.parent.postMessage('audioAutoplayEnabled', '*');
+            };
+            
+            // Hemen dene
+            enableInParent();
+            
+            // Ve birkaç saniye sonra tekrar dene
+            setTimeout(enableInParent, 2000);
+        }, 1000);
+    </script>
+</body>
+</html> 

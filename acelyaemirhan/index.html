@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>ACELYA ❤️ EMIRHAN</title>
-    <link rel="stylesheet" href="style/style.min.css">
+    <link rel="stylesheet" href="style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -374,14 +374,20 @@
                 document.querySelector('#counter-page').style.display = 'flex';
             }
 
+            if (distance <= 10000 && loveMusic.muted) {
+                loveMusic.muted = false;
+            }
+
             if (distance <= 10000 && !document.querySelector('#counter-page').classList.contains('fireworks-started')) {
                 document.querySelector('#counter-page').classList.add('fireworks-started');
                 celebrationEffects();
                 if (!music.paused) {
                     music.pause();
                 }
-                loveMusic.currentTime = 11; // 14. saniyeden başla
-                loveMusic.play();
+                if (loveMusic.paused) {
+                    loveMusic.currentTime = 11; // 14. saniyeden başla
+                    loveMusic.play();
+                }
                 playButton.innerHTML = '♫ Şarkıyı Durdur ♫';
                 playButton.classList.add('disabled');
                 playButton.style.opacity = '0.5';
@@ -402,8 +408,9 @@
 
             music.currentTime = 0;
             music.pause();
-            loveMusic.currentTime = 0;
-            loveMusic.pause();
+            loveMusic.currentTime = 8;
+            loveMusic.muted = true;
+            loveMusic.play();
             playButton.innerHTML = '♫ Şarkıyı Çal ♫';
             playButton.classList.remove('disabled');
             playButton.style.opacity = '1';
@@ -433,6 +440,7 @@
         const words = ["'26.04'", "'Vadi İstanbul'", "'30.09.2024'", "'Eserdin Tenimde'", "'14:45'"];
         const container = document.getElementById('word-container');
         let index = 0;
+
 
         function showWord() {
             container.textContent = words[index];

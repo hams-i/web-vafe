@@ -175,8 +175,9 @@
   }
 }
 @media (max-width: 470px) {
-  #word-container {
-    font-size: 2.5rem;
+  #counter-page #word-container {
+    font-size: 2.5rem !important;
+    bottom: 10px !important;
   }
 }
 @font-face {
