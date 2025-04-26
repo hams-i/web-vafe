@@ -221,7 +221,8 @@
             }
         });
 
-        const targetDate = new Date('2025-04-26T00:00:00+03:00').getTime(); // main time
+        const targetDate = new Date('2025-04-26T14:00:00+03:00').getTime(); // main time
+        let currentTargetDate = targetDate; // Mevcut hedef tarih takibi için değişken ekle
 
         function createFirework(x, y) {
             const firework = document.createElement('div');
@@ -343,7 +344,7 @@
 
         function updateCountdown() {
             const now = new Date().getTime();
-            const distance = targetDate - now;
+            const distance = currentTargetDate - now;
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -355,6 +356,12 @@
                 document.querySelector('#counter-page').style.display = 'none';
                 document.querySelector('#home-screen').style.display = 'block';
                 document.querySelector('.replay-button').style.display = 'block';
+                
+                // Sıfırla tüm değerleri
+                document.getElementById('days').innerHTML = '00';
+                document.getElementById('hours').innerHTML = '00';
+                document.getElementById('minutes').innerHTML = '00';
+                document.getElementById('seconds').innerHTML = '00';
                 return;
             }
             else {
@@ -407,14 +414,24 @@
             document.querySelector('#counter-page').style.display = 'flex';
             document.querySelector('#counter-page').classList.remove('fireworks-started');
 
-            targetDate = new Date().getTime() + 16000; // 16 seconds from now
+            // 15 saniye için zamanlayıcıyı ayarla
+            currentTargetDate = new Date().getTime() + 16000; // 15 saniye sonrası
+            
+            // Sayacı hemen güncelle
+            document.getElementById('days').innerHTML = '00';
+            document.getElementById('hours').innerHTML = '00';
+            document.getElementById('minutes').innerHTML = '00';
+            document.getElementById('seconds').innerHTML = '15';
 
             if (countdownIntervalId) {
                 clearInterval(countdownIntervalId);
             }
 
-            setTimeout(updateCountdown, 0); // Hemen başlat ama senkron kal
-            countdownIntervalId = setInterval(updateCountdown, 1000);
+            // Kısa bir gecikme ile zamanlayıcıyı başlat (sayaç daha doğru çalışacak)
+            setTimeout(() => {
+                updateCountdown();
+                countdownIntervalId = setInterval(updateCountdown, 1000);
+            }, 50);
         }
 
 
